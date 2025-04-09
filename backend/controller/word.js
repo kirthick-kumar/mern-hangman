@@ -4,7 +4,12 @@ const Word = require('../model/word');
 const router = Router();
 
 router.get('/words', async (req, res, next) => {
-    const words = await Word.find();
+    let words = await Word.find();
+    if(words.length == 0){
+        words = [{word: 'START', date: new Date()}];
+        console.log(words);
+        
+    }
     res.json({msg: 'Fetched Words', words: words})
 })
 
