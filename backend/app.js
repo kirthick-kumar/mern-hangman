@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const wordController = require('./controller/word');
 
-const MONGODB_URI = 'mongodb://localhost:27017/hangman'
+const MONGODB_URI = process.env.MONGO_URI || 'mongodb://mongo:27017/hangman';
 
 const app = express();
 
