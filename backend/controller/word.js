@@ -8,7 +8,6 @@ router.get('/words', async (req, res, next) => {
     if(words.length == 0){
         words = [{word: 'START', date: new Date()}];
         console.log(words);
-        
     }
     res.json({msg: 'Fetched Words', words: words})
 })
